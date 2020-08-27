@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: grid;
+	justify-content: center;
+	justify-items: center;
+	align-content: center;
+	text-align: center;
+	height: 100vh;
+	color: black;
+	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Source Code Pro', monospace;
+	overflow: hidden;
+	background-size: cover;
+}
+
+#time {
+	font-size: 6rem;
+	opacity: 0.8;
+}
+
+time {
+	opacity: 0.8;
+}
+
+h1 {
+	margin-bottom: 3rem;
+	opacity: 0.8;
+}
+
+h2 {
+	margin-bottom: 0.5rem;
+	opacity: 0.6;
+}
+
+@media screen and (max-width: 700px){
+	body{
+		width: 99%;
+	}
+	#time {
+		font-size: 5rem;
+	}
+}
