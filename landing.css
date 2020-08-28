@@ -2,6 +2,10 @@
 	margin: 0;
 	padding: 0;
 }
+html {
+	background-size: cover;
+}
+
 
 body {
 	display: grid;
@@ -13,7 +17,7 @@ body {
 	color: black;
 	font-family: 'Josefin Sans', sans-serif;
 	font-family: 'Source Code Pro', monospace;
-	overflow: hidden;
+	
 	background-size: cover;
 }
 
@@ -37,7 +41,7 @@ h2 {
 }
 
 @media screen and (max-width: 700px){
-	body{
+	.container{
 		width: 99%;
 	}
 	#time {

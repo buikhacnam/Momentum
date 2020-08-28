@@ -3,7 +3,8 @@
 const time = document.getElementById('time'),
 	greeting = document.getElementById('greeting'),
 	name = document.getElementById('name'),
-	focus = document.getElementById('focus');
+	focus = document.getElementById('focus'),
+	container = document.querySelector('.container');
 
 //Show Time
 function showTime() {
@@ -37,13 +38,13 @@ function setBgGreet() {
 	let hour = today.getHours();
 
 	if (hour < 12) {
-		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1531387079845-b3bcdd83a14c?ixlib=rb-0.3.5&amp' no-repeat center center)";
+		document.body.style.background = "url('https://images.unsplash.com/photo-1507295386538-ddd5e86cd597?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=530c7e3fde63061f540c50986ce2a699&auto=format&fit=crop&w=2089&w=1920') ";
 		greeting.textContent = 'Good Moring';
 	}else if (hour < 18) {
-		document.body.style.background = "url('https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?ixlib=rb-0.3.5&s=64becb1d3f72122fcfde0d1924a6b599&auto=format&fit=crop&w=1920') no-repeat center center ";
+		document.body.style.background = "url('https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?ixlib=rb-0.3.5&s=64becb1d3f72122fcfde0d1924a6b599&auto=format&fit=crop&w=1920')  ";
 		greeting.textContent = 'Good Afternoon';
 	} else {
-		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1502657877623-f66bf489d236?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c4a086173e78551f89a3e22d03a8053f&auto=format&fit=crop&w=1920' no-repeat center center)";
+		document.body.style.background = "url('https://images.unsplash.com/photo-1502657877623-f66bf489d236?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c4a086173e78551f89a3e22d03a8053f&auto=format&fit=crop&w=1920')";
 		greeting.textContent = 'Good Evening';
 	}
 }
