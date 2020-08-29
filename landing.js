@@ -38,13 +38,13 @@ function setBgGreet() {
 	let hour = today.getHours();
 
 	if (hour < 12) {
-		document.body.style.background = "url('https://images.unsplash.com/photo-1507295386538-ddd5e86cd597?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=530c7e3fde63061f540c50986ce2a699&auto=format&fit=crop&w=2089&w=1920') ";
+		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1528163073829-df0b94e210a8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=83b5db9f6094f5de650156ea3ddc9f0e&auto=format&fit=crop&w=1920') ";
 		greeting.textContent = 'Good Moring';
 	}else if (hour < 18) {
-		document.body.style.background = "url('https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?ixlib=rb-0.3.5&s=64becb1d3f72122fcfde0d1924a6b599&auto=format&fit=crop&w=1920')  ";
+		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1531387079845-b3bcdd83a14c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e8e37aac5488d819ce9ee1dd83988de3&auto=format&fit=crop&w=1920')  ";
 		greeting.textContent = 'Good Afternoon';
 	} else {
-		document.body.style.background = "url('https://images.unsplash.com/photo-1502657877623-f66bf489d236?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c4a086173e78551f89a3e22d03a8053f&auto=format&fit=crop&w=1920')";
+		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1502657877623-f66bf489d236?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c4a086173e78551f89a3e22d03a8053f&auto=format&fit=crop&w=1920')";
 		greeting.textContent = 'Good Evening';
 	}
 }
