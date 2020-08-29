@@ -19,14 +19,10 @@ function showTime() {
 	min = today.getMinutes(),
 	sec = today.getSeconds();
 
-	//set amPm
-	const amPm = hour >= 12 ? "PM" : "AM";
-
-	//12h format
-	hour = hour % 12 || 12;
+	
 
 	//Output time
-	time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${amPm}`;
+	time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
 
 	setTimeout(showTime, 1000);
 
