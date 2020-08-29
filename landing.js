@@ -4,7 +4,13 @@ const time = document.getElementById('time'),
 	greeting = document.getElementById('greeting'),
 	name = document.getElementById('name'),
 	focus = document.getElementById('focus'),
-	container = document.querySelector('.container');
+	container = document.querySelector('.container'),
+	searchbox = document.querySelector('.search-box'),
+	api = {
+		key: "7845b36e72eeebc7131617478b064fe6",
+		base: "https://api.openweathermap.org/data/2.5/"
+	};
+
 
 //Show Time
 function showTime() {
@@ -97,4 +103,54 @@ setBgGreet();
 getName();
 getFocus();
 
-console.log(name.innerText);
+//--------------about weather--------------------
+
+searchbox.addEventListener('keypress', setQuery);
+
+function setQuery(e) {
+	if (e.which == 13 || e.keyCode == 13) {
+		searchbox.blur();
+		getResult(searchbox.value);
+		searchbox.value = "";
+	}
+}
+
+function getResult(query) {
+	fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+		.then(weather => {
+			return weather.json();
+		}).then(displayResult);
+}
+
+function displayResult(weather) {
+	console.log(weather);
+	let city = document.querySelector('.location .city h1');
+	city.innerText = `${weather.name}, ${weather.sys.country}`;
+
+	let temp = document.querySelector('.current .temp h1');
+	temp.innerText = `${weather.main.temp}°C`;
+
+	let weather_el = document.querySelector('.current .weather h3');
+  weather_el.innerText = weather.weather[0].main;
+
+  	let now = new Date();
+  	let date = document.querySelector('.location .date h3');
+  	date.innerText = dateBuilder(now);
+}
+
+function dateBuilder(now) {
+   let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  
+  let day = days[now.getDay()];
+  let date = now.getDate();
+  let month = months[now.getMonth()];
+  let year = now.getFullYear();
+
+  return `${day} ${date} ${month} ${year}`;
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+	getResult('Hanoi');
+})
