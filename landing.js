@@ -23,7 +23,7 @@ function showTime() {
 	
 
 	//Output time
-	time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
+	time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}`;
 
 	setTimeout(showTime, 1000);
 
