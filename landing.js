@@ -117,9 +117,9 @@ function setQuery(e) {
 
 function getTemp() {
 	if (localStorage.getItem('temp') === null) {
-		return defaultLocation = "Hanoi"
+		return defaultLocation = "Hanoi";
 	} else {
-		return defaultLocation = localStorage.getItem('temp')
+		return defaultLocation = localStorage.getItem('temp');
 	}
 }
 
