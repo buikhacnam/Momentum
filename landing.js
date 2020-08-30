@@ -49,7 +49,6 @@ function setBgGreet() {
 		greeting.textContent = 'Good Afternoon,';
 	} else {
 		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1502657877623-f66bf489d236?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c4a086173e78551f89a3e22d03a8053f&auto=format&fit=crop&w=1920')";
-		document.body.style.color = "white";
 		greeting.textContent = 'Good Evening,';
 	}
 }
