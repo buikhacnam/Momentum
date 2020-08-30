@@ -6,6 +6,7 @@ const time = document.getElementById('time'),
 	focus = document.getElementById('focus'),
 	container = document.querySelector('.container'),
 	searchbox = document.querySelector('.search-box'),
+	faillocation = document.querySelector('city');
 	api = {
 		key: "7845b36e72eeebc7131617478b064fe6",
 		base: "https://api.openweathermap.org/data/2.5/"
@@ -103,13 +104,23 @@ getFocus();
 
 //--------------about weather--------------------
 
+let defaultLocation;
 searchbox.addEventListener('keypress', setQuery);
 
 function setQuery(e) {
 	if (e.which == 13 || e.keyCode == 13) {
 		searchbox.blur();
 		getResult(searchbox.value);
+        localStorage.setItem('temp', searchbox.value);
 		searchbox.value = "";
+	}
+}
+
+function getTemp() {
+	if (localStorage.getItem('temp') === null) {
+		return defaultLocation = "Hanoi"
+	} else {
+		return defaultLocation = localStorage.getItem('temp')
 	}
 }
 
@@ -121,6 +132,10 @@ function getResult(query) {
 }
 
 function displayResult(weather) {
+	if (weather.message == "city not found") {
+      localStorage.removeItem('temp');
+	}
+
 	console.log(weather);
 	let city = document.querySelector('.location .city h1');
 	city.innerText = `${weather.name},${weather.sys.country}`;
@@ -136,6 +151,11 @@ function displayResult(weather) {
   	date.innerText = dateBuilder(now);
 }
 
+
+
+
+
+
 function dateBuilder(now) {
    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -149,6 +169,5 @@ function dateBuilder(now) {
 
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-	getResult('Hanoi');
-})
+getResult(getTemp());
+
