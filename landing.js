@@ -136,13 +136,12 @@ function displayResult(weather) {
       localStorage.removeItem('temp');
       note.style.color = "red";
       note.style.background = "white";
-      note.innerText = "* nhập có dấu: tỉnh + địa danh / địa danh - vd: tỉnh Quảng Ninh / Hải Phòng"
+      note.innerText = "* nhập có dấu: tỉnh + địa danh / địa danh (tp) - vd: tỉnh Quảng Ninh / Hải Phòng"
       
 	} else{
     
     note.style.color = "white";
     note.style.background = "none";
-    
     note.innerText = "* tỉnh + địa danh / địa danh - vd: tỉnh Quảng Ninh / Hải Phòng"
 
 	console.log(weather);
