@@ -7,6 +7,7 @@ const time = document.getElementById('time'),
 	container = document.querySelector('.container'),
 	searchbox = document.querySelector('.search-box'),
 	faillocation = document.querySelector('city');
+	note = document.querySelector('.note');
 	api = {
 		key: "7845b36e72eeebc7131617478b064fe6",
 		base: "https://api.openweathermap.org/data/2.5/"
@@ -133,7 +134,16 @@ function getResult(query) {
 function displayResult(weather) {
 	if (weather.message == "city not found") {
       localStorage.removeItem('temp');
-	}
+      note.style.color = "red";
+      note.style.background = "white";
+      note.innerText = "* nhập có dấu: tỉnh + địa danh / địa danh - vd: tỉnh Quảng Ninh / Hải Phòng"
+      
+	} else{
+    
+    note.style.color = "white";
+    note.style.background = "none";
+    
+    note.innerText = "* tỉnh + địa danh / địa danh - vd: tỉnh Quảng Ninh / Hải Phòng"
 
 	console.log(weather);
 	let city = document.querySelector('.location .city h1');
@@ -144,6 +154,7 @@ function displayResult(weather) {
 
 	let weather_el = document.querySelector('.current .weather h3');
   weather_el.innerText = weather.weather[0].main;
+	}
 
   	let now = new Date();
   	let date = document.querySelector('.location .date h3');

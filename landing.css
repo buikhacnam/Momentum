@@ -112,10 +112,11 @@ h2,h3 {
 }
 
 .note {
-   
+    font-size: 0.85em;
     font-style: italic;
     margin-bottom: 10px;
-   
+   padding-top: 3px;
+   padding-bottom: 3px;
 }
 
 
