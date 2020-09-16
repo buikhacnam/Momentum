@@ -163,7 +163,7 @@ function displayResult(weather) {
   		} if(weather.weather[0].main == "Clear") {
   			weather_el.innerHTML = '<i class="fas fa-sun"></i>';
   		} if((weather.weather[0].main == "Clear") && (hour > 17 || hour < 5)) {
-  			weather_el.innerHTML = '<i class="fas fa-star"></i>';
+  			weather_el.innerHTML = '<i class="fas fa-cloud-moon"></i>';
   		}
   		
 	}
