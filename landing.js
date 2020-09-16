@@ -159,7 +159,7 @@ function displayResult(weather) {
 	let weather_el = document.querySelector('.current .weather');
   		if(weather.weather[0].main == "Clouds") {
   			weather_el.innerHTML = '<i class="fas fa-cloud"></i>';
-  		}if(weather.weather[0].main == "Rain") {
+  		}if(weather.weather[0].main == "Rain" || weather.weather[0].main == "Thunderstorm") {
   			weather_el.innerHTML = '<i class="fas fa-cloud-showers-heavy"></i>';
   		} if((weather.weather[0].main == "Clear") && (hour < 18)) {
   			weather_el.innerHTML = '<i class="fas fa-sun"></i>';
