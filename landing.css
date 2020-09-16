@@ -22,6 +22,7 @@ body {
 font-family: 'Russo One', sans-serif;
 	background-position: center center;
 	background-size: cover;
+	min-height: 100vh;
 }
 
 .weather-container {
@@ -31,8 +32,14 @@ font-family: 'Russo One', sans-serif;
 	align-items: center;
 }
 
+.current {
+	display: flex;
+
+}
+
 .current .temp {
 	font-size: 1.5em;
+	margin-right: 15px;
 }
 
 .location h3 {
@@ -118,7 +125,9 @@ h2,h3 {
    padding: 3px;
    
 }
-
+ i {
+ 	font-size: 3em;
+ }
 
 
 @media screen and (max-width: 700px){

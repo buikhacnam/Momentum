@@ -132,6 +132,8 @@ function getResult(query) {
 }
 
 function displayResult(weather) {
+	console.log(weather);
+
 	if (weather.message == "city not found") {
       localStorage.removeItem('temp');
       note.style.color = "red";
@@ -151,8 +153,19 @@ function displayResult(weather) {
 	let temp = document.querySelector('.current .temp h1');
 	temp.innerText = `${weather.main.temp}°C`;
 
-	let weather_el = document.querySelector('.current .weather h3');
-  weather_el.innerText = weather.weather[0].main;
+	let today = new Date();
+	let hour = today.getHours();
+	let weather_el = document.querySelector('.current .weather');
+  		if(weather.weather[0].main == "Clouds") {
+  			weather_el.innerHTML = '<i class="fas fa-cloud"></i>';
+  		}if(weather.weather[0].main == "Rain") {
+  			weather_el.innerHTML = '<i class="fas fa-cloud-showers-heavy"></i>';
+  		} if(weather.weather[0].main == "Clear") {
+  			weather_el.innerHTML = '<i class="fas fa-sun"></i>';
+  		} if((weather.weather[0].main == "Clear") && (hour > 17 || hour < 5)) {
+  			weather_el.innerHTML = '<i class="fas fa-star"></i>';
+  		}
+  		
 	}
 
   	let now = new Date();
