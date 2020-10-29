@@ -42,14 +42,14 @@ function setBgGreet() {
 	let hour = today.getHours();
 
 	if (hour < 12) {
-		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1533470192478-9897d90d5461?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bf2a25bfaf7c62c180cb29761261d1f5&auto=format&fit=crop&w=1920') ";
+		document.body.style.backgroundImage = "url('https://images.pexels.com/photos/2876511/pexels-photo-2876511.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') ";
 		greeting.textContent = 'Good Morning,';
 	}else if (hour < 18) {
-		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1533470192478-9897d90d5461?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bf2a25bfaf7c62c180cb29761261d1f5&auto=format&fit=crop&w=1920') ";
+		document.body.style.backgroundImage = "url('https://images.pexels.com/photos/2876511/pexels-photo-2876511.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') ";
 		
 		greeting.textContent = 'Good Afternoon,';
 	} else {
-		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1502657877623-f66bf489d236?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c4a086173e78551f89a3e22d03a8053f&auto=format&fit=crop&w=1920')";
+		document.body.style.backgroundImage = "url('https://images.pexels.com/photos/2876511/pexels-photo-2876511.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')";
 		greeting.textContent = 'Good Evening,';
 	}
 }
